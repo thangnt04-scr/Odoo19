@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="minimalism_theme.AppearanceDialog">
+        <Dialog title="title" size="'md'" bodyClass="'o_min_appearance'">
+            <p class="o_min_eyebrow">Minimalism · Odoo 19</p>
+            <h3 class="mb-3">A little less. A lot clearer.</h3>
+            <label class="o_min_enable d-flex align-items-center gap-3 mb-4">
+                <input type="checkbox" class="form-check-input m-0"
+                    t-att-checked="state.enabled" t-att-disabled="status.loading" t-on-change="toggle"/>
+                <span>Use Minimalism theme</span>
+            </label>
+            <p class="small text-muted">
+                Use the sun or moon button in the top bar to switch between day and night mode for yourself.
+            </p>
+            <p class="small text-muted">
+                Theme colors are managed by your administrator in Settings → Minimalism.
+            </p>
+            <fieldset class="mb-4" t-att-disabled="!state.enabled || status.loading">
+                <legend class="fs-6 fw-bold mb-2">Table spacing</legend>
+                <div class="d-flex flex-wrap gap-4">
+                    <label class="d-flex align-items-center gap-2">
+                        <input type="radio" name="min_density" value="comfortable"
+                            t-att-checked="state.density === 'comfortable'" t-on-change="setDensity"/>
+                        Comfortable
+                    </label>
+                    <label class="d-flex align-items-center gap-2">
+                        <input type="radio" name="min_density" value="compact"
+                            t-att-checked="state.density === 'compact'" t-on-change="setDensity"/>
+                        Compact
+                    </label>
+                </div>
+            </fieldset>
+            <p t-if="status.loading" class="small text-muted mb-0" role="status">
+                Loading appearance… Your open work will be kept.
+            </p>
+            <p t-elif="status.persistent" class="small text-muted mb-0">
+                Changes are saved for your user and database in this browser.
+            </p>
+            <p t-else="" class="small text-warning mb-0" role="status">
+                Browser storage is unavailable. Changes last until this page is reloaded.
+            </p>
+            <t t-set-slot="footer">
+                <button type="button" class="btn btn-primary" t-on-click="props.close">Done</button>
+                <button type="button" class="btn btn-secondary" t-att-disabled="status.loading" t-on-click="reset">Reset defaults</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,289 @@
+/* SPDX-License-Identifier: LGPL-3.0-or-later
+ * Minimalism: an independent Odoo adaptation of shadcn/ui's visual language.
+ * Screen-only, opt-in scope: native report/print styles remain untouched.
+ */
+@media screen {
+    .o_web_client.o_min_theme {
+        --min-accent: #2563eb;
+        --min-accent-ink: #ffffff;
+        --min-accent-soft: #dee8fc;
+        --min-bg: #fafafa;
+        --min-surface: #ffffff;
+        --min-subtle: #f4f4f5;
+        --min-ink: #18181b;
+        --min-muted: #65656f;
+        --min-border: #e4e4e7;
+        --min-line: #e4e4e7;
+        --min-input: #8b8b95;
+        --min-link: #1d4ed8;
+        --min-ring: #52525b;
+        --min-danger: #b91c1c;
+        --min-radius: 0.5rem;
+        --min-shadow-small: 0 1px 2px #00000008;
+        --min-shadow: 0 4px 16px #0000000d, 0 1px 3px #0000000a;
+        --min-row-padding: 0.7rem;
+        color-scheme: light;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--min-ink);
+        background-color: var(--min-bg);
+        accent-color: var(--min-accent);
+    }
+    .o_web_client.o_min_theme[data-min-mode="dark"] {
+        --min-bg: #09090b;
+        --min-surface: #18181b;
+        --min-subtle: #27272a;
+        --min-ink: #fafafa;
+        --min-muted: #a1a1aa;
+        --min-border: #3f3f46;
+        --min-line: #3f3f46;
+        --min-input: #71717a;
+        --min-link: #93c5fd;
+        --min-ring: #d4d4d8;
+        --min-danger: #fca5a5;
+        --min-shadow-small: 0 1px 2px #00000033;
+        --min-shadow: 0 8px 24px #00000040, 0 1px 3px #00000033;
+        color-scheme: dark;
+    }
+    .o_web_client.o_min_theme[data-min-density="compact"] { --min-row-padding: 0.35rem; }
+    .o_web_client.o_min_theme .text-muted { color: var(--min-muted) !important; }
+    .o_web_client.o_min_theme :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+        color: var(--min-ink);
+        letter-spacing: -0.025em;
+    }
+
+    /* Keep Odoo's menu geometry, native overflow menu, hotkeys and portal layer. */
+    .o_web_client.o_min_theme .o_main_navbar {
+        --o-navbar-height: 52px;
+        --NavBar-brand-color: var(--min-ink);
+        --NavBar-entry-color: var(--min-muted);
+        --NavBar-entry-backgroundColor: transparent;
+        --NavBar-entry-backgroundColor--hover: var(--min-subtle);
+        --NavBar-entry-backgroundColor--active: var(--min-subtle);
+        background: var(--min-surface);
+        color: var(--min-ink);
+        border-bottom: 1px solid var(--min-border);
+    }
+    .o_web_client.o_min_theme .o_main_navbar :is(.o_menu_brand, .o_nav_entry, .dropdown-toggle, .o_menu_toggle, .o_navbar_apps_menu > button) {
+        color: var(--min-ink);
+        font-weight: 500;
+    }
+    .o_web_client.o_min_theme .o_main_navbar .o_menu_brand { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.025em; }
+    .o_web_client.o_min_theme .o_menu_systray > :is(button, div) > button { color: var(--min-ink); }
+    .o_web_client.o_min_theme .o_main_navbar .o_menu_sections .o_nav_entry { border-radius: 0.375rem; }
+    .o_web_client.o_min_theme :is(.o_app_menu_sidebar, .o_sidebar_topbar) {
+        border-color: var(--min-border);
+        background: var(--min-surface);
+        color: var(--min-ink);
+    }
+    .o_web_client.o_min_theme :is(.o_action_manager, .o_content, .o_form_view, .o_kanban_renderer, .o_form_sheet_bg) { background-color: var(--min-bg); }
+    .o_web_client.o_min_theme .o_control_panel { background: var(--min-surface); border-bottom: 1px solid var(--min-border); }
+    .o_web_client.o_min_theme .o_control_panel .breadcrumb { background: transparent; margin-bottom: 0; font-weight: 500; }
+    .o_web_client.o_min_theme .o_control_panel .breadcrumb-item { background: transparent; }
+    .o_web_client.o_min_theme .o_control_panel .breadcrumb-item.active { color: var(--min-ink); }
+    .o_web_client.o_min_theme .o_control_panel .breadcrumb a { color: var(--min-link); }
+
+    /* Semantic variants retain their original status meaning. */
+    .o_web_client.o_min_theme .btn { transition-property: box-shadow; }
+    .o_web_client.o_min_theme .btn:is(.btn-primary, .btn-secondary, .btn-outline-primary, .btn-outline-secondary):not(.o_arrow_button) {
+        border-radius: var(--min-radius);
+        border-width: 1px;
+        font-weight: 500;
+        box-shadow: var(--min-shadow-small);
+        transition: box-shadow 120ms ease;
+    }
+    .o_web_client.o_min_theme .btn-primary:not(.o_arrow_button) {
+        --btn-bg: var(--min-accent);
+        --btn-color: var(--min-accent-ink);
+        --btn-border-color: var(--min-accent);
+        --btn-hover-bg: var(--min-accent);
+        --btn-hover-color: var(--min-accent-ink);
+        --btn-hover-border-color: var(--min-accent);
+        --btn-active-bg: var(--min-accent);
+        --btn-active-color: var(--min-accent-ink);
+        --btn-active-border-color: var(--min-accent);
+        background-color: var(--min-accent);
+        color: var(--min-accent-ink);
+        border-color: var(--min-accent);
+    }
+    .o_web_client.o_min_theme .btn-primary:not(.o_arrow_button):not(:disabled):hover { box-shadow: inset 0 0 0 100px #00000012; }
+    .o_web_client.o_min_theme .btn:is(.btn-secondary, .btn-outline-primary, .btn-outline-secondary):not(.o_arrow_button) {
+        --btn-border-color: var(--min-input);
+        --btn-hover-border-color: var(--min-ring);
+        --btn-active-border-color: var(--min-ring);
+        background: var(--min-surface);
+        color: var(--min-ink);
+        border-color: var(--min-input);
+    }
+    .o_web_client.o_min_theme .btn:is(.btn-secondary, .btn-outline-primary, .btn-outline-secondary):not(.o_arrow_button):is(:hover, .active, [aria-pressed="true"]) {
+        background: var(--min-subtle);
+        color: var(--min-ink);
+    }
+    .o_web_client.o_min_theme .btn:is(:disabled, .disabled):not(.o_arrow_button_current) { opacity: 0.5; box-shadow: none; }
+    .o_web_client.o_min_theme .btn-group > .btn:not(:first-child) { border-start-start-radius: 0; border-end-start-radius: 0; }
+    .o_web_client.o_min_theme .btn-group > .btn:not(:last-child) { border-start-end-radius: 0; border-end-end-radius: 0; }
+    .o_web_client.o_min_theme[data-min-mode="dark"] .btn:not([class*="btn-"]) {
+        --btn-color: var(--min-ink); --btn-hover-color: var(--min-ink); --btn-active-color: var(--min-ink);
+    }
+    .o_web_client.o_min_theme .btn-link:not(.btn-success, .btn-warning, .btn-danger, .btn-info) {
+        --btn-color: var(--min-link); --btn-hover-color: var(--min-link); --btn-active-color: var(--min-link);
+    }
+    .o_web_client.o_min_theme :is(.btn, a, input, select, textarea, [tabindex]):focus-visible {
+        outline: 2px solid var(--min-ring);
+        outline-offset: 2px;
+    }
+    .o_web_client.o_min_theme .o_main_navbar :is(button, a):focus-visible { outline-offset: -3px; }
+    .o_web_client.o_min_theme .form-check-input { border-color: var(--min-input); }
+    .o_web_client.o_min_theme .form-check-input[type="checkbox"] { border-radius: 0.25rem; }
+    .o_web_client.o_min_theme .form-check-input:checked { background-color: var(--min-accent); border-color: var(--min-accent); }
+
+    /* Search facets, completion and keyboard selection keep native behavior. */
+    .o_web_client.o_min_theme .o_searchview {
+        border: 1px solid var(--min-input) !important;
+        border-radius: var(--min-radius);
+        background: var(--min-surface);
+        color: var(--min-ink);
+        box-shadow: var(--min-shadow-small);
+    }
+    .o_web_client.o_min_theme .o_searchview:focus-within { outline: 2px solid var(--min-ring); outline-offset: 1px; }
+    /* The composite search box has one focus ring, not nested outlines. */
+    .o_web_client.o_min_theme .o_searchview :is(input, [tabindex]):focus-visible { outline: none; box-shadow: none; }
+    .o_web_client.o_min_theme .o_searchview_input { color: var(--min-ink); background: transparent; }
+    .o_web_client.o_min_theme .o_searchview .o_searchview_facet {
+        border: 1px solid var(--min-border); border-radius: 0.375rem; background: var(--min-subtle); color: var(--min-ink);
+    }
+    .o_web_client.o_min_theme .o_searchview .o_searchview_facet_label { color: var(--min-accent-ink); background: var(--min-accent); }
+
+    /* Quiet tables retain sticky headers, decorations, selection and drag handles. */
+    .o_web_client.o_min_theme .o_list_renderer { background: var(--min-surface); }
+    .o_web_client.o_min_theme .o_list_table {
+        --table-color: var(--min-ink); --table-bg: var(--min-surface);
+        --table-striped-bg: var(--min-surface); --table-striped-color: var(--min-ink);
+        --table-hover-bg: var(--min-subtle); --table-hover-color: var(--min-ink);
+        --table-active-bg: var(--min-accent-soft); --table-active-color: var(--min-ink);
+        --table-border-color: var(--min-line);
+        --bs-table-color: var(--min-ink); --bs-table-bg: var(--min-surface);
+        --bs-table-striped-bg: var(--min-surface); --bs-table-striped-color: var(--min-ink);
+        --bs-table-hover-bg: var(--min-subtle); --bs-table-hover-color: var(--min-ink);
+        --bs-table-active-bg: var(--min-accent-soft); --bs-table-active-color: var(--min-ink);
+        --bs-table-border-color: var(--min-line);
+        color: var(--min-ink); border-color: var(--min-line);
+    }
+    .o_web_client.o_min_theme .o_list_table thead th {
+        background: var(--min-bg); color: var(--min-muted);
+        border-bottom: 1px solid var(--min-border);
+        padding-block: 0.8rem; font-weight: 500; font-size: 0.85rem;
+    }
+    .o_web_client.o_min_theme .o_list_table .o_data_row > td {
+        padding-block: var(--min-row-padding); border-bottom-color: var(--min-line); vertical-align: middle;
+    }
+    .o_web_client.o_min_theme .o_list_table .o_data_row.o_selected_row > td { background-color: var(--min-accent-soft); }
+    .o_web_client.o_min_theme .o_list_table :is(.o_group_header, tfoot) { background: var(--min-subtle); font-weight: 600; }
+    .o_web_client.o_min_theme :is(.badge, .o_tag) { border-radius: 0.375rem; font-weight: 500; }
+
+    /* Do not impose dimensions on date, monetary, x2many or relational widgets. */
+    .o_web_client.o_min_theme .o_form_view .o_form_sheet {
+        background: var(--min-surface); color: var(--min-ink);
+        border: 1px solid var(--min-border); border-radius: 0.75rem;
+        box-shadow: var(--min-shadow-small); margin-bottom: 1.25rem;
+    }
+    .o_web_client.o_min_theme .o_form_view .oe_title :is(h1, h2) { font-weight: 600; letter-spacing: -0.035em; }
+    .o_web_client.o_min_theme .o_form_view .o_form_label { font-weight: 500; }
+    .o_web_client.o_min_theme[data-min-mode="dark"] .o_form_view .o_form_label:not(.o_field_invalid, .text-danger) { color: var(--min-ink); }
+    .o_web_client.o_min_theme :is(.form-control, .form-select) { background-color: var(--min-surface); color: var(--min-ink); border-color: var(--min-input); border-radius: var(--min-radius); }
+    .o_web_client.o_min_theme .o_form_view .o_field_widget .o_input {
+        --o-input-border-color: var(--min-input);
+        color: var(--min-ink); background-color: transparent;
+        border-bottom: 1px solid var(--min-input);
+    }
+    .o_web_client.o_min_theme .o_form_view .o_field_widget.o_required_modifier .o_input { border-bottom-color: var(--min-ring); }
+    .o_web_client.o_min_theme .o_form_view .o_field_widget .o_input:is(:hover, :focus) { --o-input-border-color: var(--min-ring); border-bottom-color: var(--min-ring); }
+    .o_web_client.o_min_theme .o_form_view .o_field_widget:is(.o_field_invalid, .o_invalid) .o_input {
+        --o-input-border-color: var(--min-danger); border-bottom-color: var(--min-danger);
+    }
+    .o_web_client.o_min_theme :is(input, textarea)::placeholder { color: var(--min-muted); opacity: 1; }
+    .o_web_client.o_min_theme[data-min-mode="dark"] :is(.o_field_email, .o_field_phone, .o_field_url) a { color: var(--min-link); }
+    .o_web_client.o_min_theme .o_form_statusbar { background: var(--min-surface); border-bottom-color: var(--min-line); }
+    .o_web_client.o_min_theme .o_statusbar_status .o_arrow_button { font-weight: 500; }
+    .o_web_client.o_min_theme .o_notebook .nav-tabs { background: var(--min-surface); border-bottom: 1px solid var(--min-border); gap: 0.25rem; }
+    .o_web_client.o_min_theme .o_notebook .nav-tabs .nav-link { transition: box-shadow 120ms ease; color: var(--min-muted); font-weight: 500; border-radius: 0.375rem 0.375rem 0 0; }
+    .o_web_client.o_min_theme .o_notebook .nav-tabs .nav-link.active {
+        background: var(--min-surface); color: var(--min-ink); border-color: transparent;
+        box-shadow: inset 0 -2px 0 var(--min-accent);
+    }
+    .o_web_client.o_min_theme .oe_button_box .oe_stat_button { border-color: var(--min-line); }
+    .o_web_client.o_min_theme .o_form_view .o_form_nosheet,
+    .o_web_client.o_min_theme .o_base_settings_view .settings { background: var(--min-surface); color: var(--min-ink); }
+    .o_web_client.o_min_theme .o_base_settings_view .o_form_renderer {
+        --settings__tab-bg: var(--min-bg); --settings__tab-bg--active: var(--min-subtle);
+        --settings__tab-color: var(--min-ink); --settings__title-bg: var(--min-bg);
+    }
+    .o_web_client.o_min_theme .o_base_settings_view .settings_tab .tab:is(:hover, .selected) { color: var(--min-ink); }
+    .o_web_client.o_min_theme .o_base_settings_view .settingSearchHeader { background: var(--min-subtle); color: var(--min-ink); }
+
+    /* No transforms or overflow clipping on draggable cards or color markers. */
+    .o_web_client.o_min_theme .o_kanban_renderer .o_kanban_record:not(.o_kanban_ghost) {
+        background: var(--min-surface); color: var(--min-ink); border: 1px solid var(--min-border);
+        border-radius: 0.75rem; box-shadow: var(--min-shadow-small);
+    }
+    .o_web_client.o_min_theme .o_kanban_renderer .o_kanban_record:not(.o_kanban_ghost):hover { box-shadow: var(--min-shadow); }
+    .o_web_client.o_min_theme .o_kanban_group .o_kanban_header { border-bottom: 1px solid var(--min-border); margin-bottom: 0.75rem; }
+    .o_web_client.o_min_theme .o_kanban_header .o_column_title { font-weight: 600; letter-spacing: -0.015em; }
+
+    /* Body scope includes Odoo's portaled overlays without changing their layers. */
+    .o_web_client.o_min_theme :is(.dropdown-menu, .o-dropdown--menu, .o_popover, .o-autocomplete--dropdown-menu) {
+        background: var(--min-surface); color: var(--min-ink); border: 1px solid var(--min-border);
+        border-radius: var(--min-radius); box-shadow: var(--min-shadow);
+    }
+    .o_web_client.o_min_theme :is(.dropdown-menu, .o-dropdown--menu) .dropdown-item { color: var(--min-ink); border-radius: 0.25rem; }
+    .o_web_client.o_min_theme :is(.dropdown-menu, .o-dropdown--menu) .dropdown-item:not(.disabled):is(:hover, :focus, .focus, .selected, .active) { background: var(--min-subtle); color: var(--min-ink); }
+    .o_web_client.o_min_theme .modal-content { background: var(--min-surface); color: var(--min-ink); border: 1px solid var(--min-border); border-radius: 0.75rem; box-shadow: var(--min-shadow); }
+    .o_web_client.o_min_theme .modal-header { background: var(--min-surface); border-bottom: 1px solid var(--min-border); }
+    .o_web_client.o_min_theme .modal-title { font-weight: 600; letter-spacing: -0.025em; }
+    .o_web_client.o_min_theme .modal-footer { border-top: 1px solid var(--min-line); gap: 0.5rem; }
+    .o_web_client.o_min_theme[data-min-mode="dark"] .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+    .o_web_client.o_min_theme :is(.o_notification, .toast) { background: var(--min-surface); color: var(--min-ink); border: 1px solid var(--min-border); border-radius: var(--min-radius); box-shadow: var(--min-shadow); }
+
+    /* Native private dark assets cover Calendar, Discuss, CRM, Project and editors. */
+    .o_web_client.o_min_theme[data-min-mode="dark"] .o_form_view :is(.o-mail-ChatterContainer, .o-mail-Chatter, .o-mail-Chatter-top) { background-color: var(--min-bg); color: var(--min-ink); }
+    .o_web_client.o_min_theme[data-min-mode="dark"] .o_form_view .o-mail-Chatter .text-action,
+    .o_web_client.o_min_theme[data-min-mode="dark"] .o-mail-ActivityButton.btn-dark,
+    .o_web_client.o_min_theme[data-min-mode="dark"] .o-mail-ActivityButton .text-dark:not(.text-danger, .text-warning, .text-success) { color: var(--min-muted) !important; }
+    .o_web_client.o_min_theme .o-mail-Composer-inputContainer:focus-within { outline: 2px solid var(--min-ring); outline-offset: 1px; }
+    .o_web_client.o_min_theme .o-mail-Composer-inputContainer :is(textarea, [contenteditable]):focus-visible { outline: none; }
+    .o_web_client.o_min_theme .o-discuss-ChannelMember.o-offline { opacity: 1; }
+    .o_web_client.o_min_theme .o_pivot :is(thead, .o_pivot_header_cell_closed, .o_pivot_header_cell_opened) { background: var(--min-subtle); color: var(--min-ink); }
+
+    /* Shared settings and personal controls must also work when styling is off. */
+    .o_min_accent_presets .o_radio_item { margin-block: 0.4rem; }
+    .o_min_accent_presets label { display: inline-flex; align-items: center; gap: 0.65rem; cursor: pointer; }
+    .o_min_accent_presets label::before {
+        content: ""; display: inline-block; flex-shrink: 0;
+        width: 1.8rem; height: 1.2rem; border: 1px solid #71717a; border-radius: 0.375rem;
+        background: var(--min-preset-swatch);
+    }
+    .o_min_accent_presets [data-value="yellow"] + label { --min-preset-swatch: #eab308; }
+    .o_min_accent_presets [data-value="blue"] + label { --min-preset-swatch: #2563eb; }
+    .o_min_accent_presets [data-value="green"] + label { --min-preset-swatch: #15803d; }
+    .o_min_accent_presets [data-value="purple"] + label { --min-preset-swatch: #7c3aed; }
+    .o_min_accent_presets [data-value="pink"] + label { --min-preset-swatch: #db2777; }
+    .o_min_accent_presets [data-value="orange"] + label { --min-preset-swatch: #c2410c; }
+    .o_min_accent_presets [data-value="red"] + label { --min-preset-swatch: #dc2626; }
+    .o_min_appearance .o_min_eyebrow { font-size: 0.75rem; font-weight: 500; color: var(--min-muted, inherit); }
+    .o_min_appearance h3 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.03em; }
+    .o_min_appearance .o_min_enable { font-weight: 500; cursor: pointer; }
+    .o_min_appearance fieldset:disabled { opacity: 0.5; }
+}
+@media screen and (max-width: 767.98px) {
+    .o_web_client.o_min_theme .o_main_navbar { --o-navbar-height: 48px; }
+    .o_web_client.o_min_theme .o_main_navbar .o_menu_systray { min-width: 0; flex-shrink: 1; overflow-x: auto; scrollbar-width: thin; }
+    .o_web_client.o_min_theme .o_form_view .o_form_sheet { border-radius: 0; box-shadow: none; border-inline: 0; }
+    .o_web_client.o_min_theme .modal-content { border-radius: 0.5rem; }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+    .o_web_client.o_min_theme .btn { transition: none !important; }
+    .o_min_mode_toggle .fa-spin { animation: none; }
+}
+@media screen and (forced-colors: active) {
+    .o_web_client.o_min_theme :is(.btn, .form-check-input, .o_searchview, .o_input) { border-color: ButtonText !important; }
+    .o_web_client.o_min_theme :focus-visible { outline-color: Highlight; }
+}

@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+// Zinc surfaces compiled exclusively in Minimalism's private native bundles.
+$o-webclient-color-scheme: dark;
+$o-white: #18181b;
+$o-black: #fafafa;
+$o-gray-100: #09090b;
+$o-gray-200: #27272a;
+$o-gray-300: #3f3f46;
+$o-gray-400: #71717a;
+$o-gray-500: #a1a1aa;
+$o-gray-600: #a1a1aa;
+$o-gray-700: #d4d4d8;
+$o-gray-800: #e4e4e7;
+$o-gray-900: #fafafa;
+$o-view-background-color: #18181b;
+$o-webclient-background-color: #09090b;
+$o-main-color-muted: #a1a1aa;
+$o-main-link-color: #93c5fd;
+$o-main-code-color: #f9a8d4;
+$o-action: #93c5fd;
+$o-component-active-bg: #27272a;
+$o-component-active-border: #93c5fd;
+$o-form-lightsecondary: #3f3f46;
+$o-list-group-active-bg: #27272a;
+$o-shadow-color: #000000;
+$o-theme-text-colors: (
+    "success": #86efac,
+    "info": #67e8f9,
+    "warning": #fcd34d,
+    "danger": #fca5a5,
+);

@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: LGPL-3.0-or-later
+// Bootstrap's stock helpers mix literal white/black. In this private dark
+// bundle, soft backgrounds mix toward the surface and text toward the ink.
+// This keeps generated alerts and other contextual components paired correctly.
+@function tint-color($color, $weight) {
+    @return mix($o-view-background-color, $color, $weight);
+}
+
+@function shade-color($color, $weight) {
+    @return mix($o-main-text-color, $color, $weight);
+}
