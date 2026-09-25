@@ -1,8 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_helpdesk_ticket_agent,Nhân viên hỗ trợ - ticket hỗ trợ,model_helpdesk_ticket,helpdesk.group_helpdesk_agent,1,1,1,0
-access_helpdesk_ticket_admin,Quản trị viên hỗ trợ - ticket hỗ trợ,model_helpdesk_ticket,helpdesk.group_helpdesk_admin,1,1,1,1
-access_helpdesk_stage_agent,Nhân viên hỗ trợ - trạng thái,model_helpdesk_stage,helpdesk.group_helpdesk_agent,1,0,0,0
-access_helpdesk_stage_supervisor,Giám sát viên hỗ trợ - trạng thái,model_helpdesk_stage,helpdesk.group_helpdesk_supervisor,1,1,1,0
-access_helpdesk_stage_admin,Quản trị viên hỗ trợ - trạng thái,model_helpdesk_stage,helpdesk.group_helpdesk_admin,1,1,1,1
-access_helpdesk_assign_wizard_agent,Nhân viên hỗ trợ - cửa sổ phân công,model_helpdesk_assign_wizard,helpdesk.group_helpdesk_agent,1,1,1,1
-access_helpdesk_agent_create_wizard_supervisor,Giám sát viên hỗ trợ - tạo nhân viên,model_helpdesk_agent_create_wizard,helpdesk.group_helpdesk_supervisor,1,1,1,1
