@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_helpdesk_customer_list" model="ir.ui.view">
+        <field name="name">helpdesk.customer.list</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list string="Khách hàng Helpdesk">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="helpdesk_customer"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_helpdesk_customer_form" model="ir.ui.view">
+        <field name="name">helpdesk.customer.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="helpdesk_customer" string="Khách hàng Helpdesk"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
